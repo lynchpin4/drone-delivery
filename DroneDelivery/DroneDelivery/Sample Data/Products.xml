@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<products>
+  <!-- This XML file is used to initially seed the database -->
+  
+  <product>
+    <ProductName>Skittles</ProductName>
+    <ProductImageURL>/Assets/skittles.jpg</ProductImageURL>
+    <ProductCategory>Candy</ProductCategory>
+    <ProductDescription>4 packs of Skittles candy.</ProductDescription>
+    <ProductPrice>15.00</ProductPrice>
+    <ProductWeight>1.2</ProductWeight>
+  </product>
+  
+  <product>
+    <ProductName>Wrigleys Gum</ProductName>
+    <ProductImageURL>/Assets/wrigleys.jpg</ProductImageURL>
+    <ProductCategory>Candy</ProductCategory>
+    <ProductDescription>5pk wrigleys chewing gum</ProductDescription>
+    <ProductPrice>17.00</ProductPrice>
+    <ProductWeight>1.4</ProductWeight>
+  </product>
+
+  <product>
+    <ProductName>Extra Gum</ProductName>
+    <ProductImageURL>/Assets/extra.jpg</ProductImageURL>
+    <ProductCategory>Candy</ProductCategory>
+    <ProductDescription>5pk extra chewing gum</ProductDescription>
+    <ProductPrice>17.00</ProductPrice>
+    <ProductWeight>1.4</ProductWeight>
+  </product>
+  
+  <product>
+    <ProductName>AAA Batteries</ProductName>
+    <ProductImageURL>/Assets/aaa-batteries.jpg</ProductImageURL>
+    <ProductCategory>Batteries</ProductCategory>
+    <ProductDescription>Pack of AAA Batteries.</ProductDescription>
+    <ProductPrice>10.00</ProductPrice>
+    <ProductWeight>1.5</ProductWeight>
+  </product>
+  
+  <product>
+    <ProductName>AA Rechargeable Batteries</ProductName>
+    <ProductImageURL>/Assets/rechargeable-aa.jpg</ProductImageURL>
+    <ProductCategory>Batteries</ProductCategory>
+    <ProductDescription>Pack of AA Batteries. Rechargeable</ProductDescription>
+    <ProductPrice>20.00</ProductPrice>
+    <ProductWeight>2.5</ProductWeight>
+  </product>
+  
+  <product>
+    <ProductName>Nikon Coolpix</ProductName>
+    <ProductImageURL>/Assets/nikon-coolpix.jpg</ProductImageURL>
+    <ProductCategory>Cameras</ProductCategory>
+    <ProductDescription>Nikon Coolpix camera</ProductDescription>
+    <ProductPrice>100.00</ProductPrice>
+    <ProductWeight>1.5</ProductWeight>
+  </product>
+  
+  <product>
+    <ProductName>Canon Powershot</ProductName>
+    <ProductImageURL>/Assets/canon-powershot.jpg</ProductImageURL>
+    <ProductCategory>Cameras</ProductCategory>
+    <ProductDescription>Digital Camera</ProductDescription>
+    <ProductPrice>200.00</ProductPrice>
+    <ProductWeight>2.5</ProductWeight>
+  </product>
+  
+  <product>
+    <ProductName>Socks</ProductName>
+    <ProductImageURL>/Assets/socks.jpg</ProductImageURL>
+    <ProductCategory>Clothing</ProductCategory>
+    <ProductDescription>Fresh pack of socks</ProductDescription>
+    <ProductPrice>20.00</ProductPrice>
+    <ProductWeight>2.5</ProductWeight>
+  </product>
+
+  <product>
+    <ProductName>Sharpies (6pk)</ProductName>
+    <ProductImageURL>/Assets/sharpie.jpg</ProductImageURL>
+    <ProductCategory>Tools</ProductCategory>
+    <ProductDescription>Sharpies</ProductDescription>
+    <ProductPrice>17.00</ProductPrice>
+    <ProductWeight>1.4</ProductWeight>
+  </product>
+  
+  <product>
+    <ProductName>Lighters (3pk)</ProductName>
+    <ProductImageURL>/Assets/lighters.jpg</ProductImageURL>
+    <ProductCategory>Tools</ProductCategory>
+    <ProductDescription>3pk bic lighters</ProductDescription>
+    <ProductPrice>12.00</ProductPrice>
+    <ProductWeight>1.4</ProductWeight>
+  </product>
+  
+  <product>
+    <ProductName>Glowsticks</ProductName>
+    <ProductImageURL>/Assets/glowsticks.jpg</ProductImageURL>
+    <ProductCategory>Fun</ProductCategory>
+    <ProductDescription>4 pack of glowsticks.</ProductDescription>
+    <ProductPrice>14.00</ProductPrice>
+    <ProductWeight>1.4</ProductWeight>
+  </product>
+  
+  <product>
+    <ProductName>Newports (1pk)</ProductName>
+    <ProductImageURL>/Assets/cigs.jpg</ProductImageURL>
+    <ProductCategory>Cigs</ProductCategory>
+    <ProductDescription>Pack of cigarettes</ProductDescription>
+    <ProductPrice>14.00</ProductPrice>
+    <ProductWeight>1.4</ProductWeight>
+  </product>
+  
+  <product>
+    <ProductName>Marlboro (1pk)</ProductName>
+    <ProductImageURL>/Assets/cigs.jpg</ProductImageURL>
+    <ProductCategory>Cigs</ProductCategory>
+    <ProductDescription>Pack of cigarettes</ProductDescription>
+    <ProductPrice>14.00</ProductPrice>
+    <ProductWeight>1.4</ProductWeight>
+  </product>
+
+</products>

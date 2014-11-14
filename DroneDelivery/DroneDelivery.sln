@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DroneDelivery", "DroneDelivery\DroneDelivery.csproj", "{E135DD59-8671-4A42-B76C-EC791B52A3A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{0A0D81D6-D230-4C45-945A-10772A4B3120}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{E5BC1DED-4ABD-4F31-99ED-D6F4375089CC}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\DroneDelivery-WAWS-dev.json = PublishScripts\Configurations\DroneDelivery-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drone", "..\Drone\Drone.csproj", "{8DE2224F-F04C-4643-84A8-1B82665EAD3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E135DD59-8671-4A42-B76C-EC791B52A3A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E135DD59-8671-4A42-B76C-EC791B52A3A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E135DD59-8671-4A42-B76C-EC791B52A3A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E135DD59-8671-4A42-B76C-EC791B52A3A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DE2224F-F04C-4643-84A8-1B82665EAD3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DE2224F-F04C-4643-84A8-1B82665EAD3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DE2224F-F04C-4643-84A8-1B82665EAD3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DE2224F-F04C-4643-84A8-1B82665EAD3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E5BC1DED-4ABD-4F31-99ED-D6F4375089CC} = {0A0D81D6-D230-4C45-945A-10772A4B3120}
+	EndGlobalSection
+EndGlobal

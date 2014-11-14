@@ -1,0 +1,17 @@
+﻿@{
+    var products = ViewBag.products; 
+}
+<div class="row">
+    <div class="col-md-9">
+        @foreach (var p in products)
+        {
+            <h1 class="page-header">@p.Key</h1>
+            <div class="products-row">
+                @foreach (var r in p.Value)
+                {
+                    <a href="/products/display/@r.Id"><img src="@r.ProductImageURL" class="img-thumbnail img-responsive" alt="@r.ProductName" /></a>
+                }
+            </div>
+        }
+    </div>
+</div>
