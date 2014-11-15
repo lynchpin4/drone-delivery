@@ -15,7 +15,26 @@ namespace DroneDelivery.Models
     {
 
         /// <summary>
-        /// Get total of all items in the inventory/stock, by product id.
+        /// Function for changing the stock count from the backend (Admin Panel) - Creates a new stock transaction and updates the DB.
+        /// </summary>
+        /// <param name="db"></param>
+        /// <param name="productId"></param>
+        /// <param name="count">Can be a positive or negative integer.</param>
+        public static void AddToStock(DatabaseContext db, int productId, int count)
+        {
+            var tx = db.InventoryTransactions.Create();
+            tx.ProductId = productId;
+            tx.IsAdmin = true;
+            tx.IsUser = false;
+            tx.Count = count;
+            tx.OccurredAt = DateTime.Now;
+
+            db.InventoryTransactions.Add(tx);
+            db.SaveChanges();
+        }
+
+        /// <summary>
+        /// Get total of all items in the inventory/stock by product id.
         /// </summary>
         /// <param name="db"></param>
         /// <param name="productId"></param>
@@ -39,6 +58,9 @@ namespace DroneDelivery.Models
         // Who caused this transaction
         public bool IsUser { get; set; }
         public bool IsAdmin { get; set; }
+
+        // Only filled in if a user created this transaction via an order in the process of being fufilled.
+        public string UserId { get; set; }
 
         public DateTime OccurredAt { get; set; }
 

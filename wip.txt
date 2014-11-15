@@ -1,0 +1,13 @@
+- Drone Api / Simulator (<b>Order Queue</b>, Drone Flight Sim)
+- Email System
+- Inventory / Product Control / Drone Backend (<i>in prog</i>)
+- Purchase / Order frontend (Address / Delivery Area (Select point on map) / Range Checker)
+- XML Doc DB Design
+- Push DB to cloud 
+
+Cleanup:
+- Add joke footer
+- Remove additional login providers / any unused stff from manage/login/register pages
+
+Additional Features:
+- Twilio

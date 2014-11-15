@@ -34,7 +34,7 @@ namespace DroneDelivery.Database
             System.Data.Entity.Database.SetInitializer<DatabaseContext>(new DatabaseInitializer());
             return new DatabaseContext();
         }
-
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

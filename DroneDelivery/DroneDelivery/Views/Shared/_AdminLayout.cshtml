@@ -20,31 +20,21 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Products", "Index", "Products")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Store Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Products Admin / Inventory", "Index", "ProductsAdmin")</li>
+                    <li>@Html.ActionLink("Drones", "Drones", "Admin")</li>
+                    <li>@Html.ActionLink("Orders", "Orders", "Admin")</li>
+                    <li>@Html.ActionLink("Customers", "Customers", "Admin")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container-fluid body-content">
+    <div class="container body-content">
         <div class="row">
-
-            <div class="col-sm-3 col-md-2 sidebar">
-                <ul class="nav nav-sidebar">
-                    <li><a href="#">Home</a></li>
-                </ul>
-            </div>
-
-            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <h1 class="page-header">@ViewBag.Title</h1>
-                @RenderBody()
-            </div>
-
+            <div align="center"><h1 class="page-header">@ViewBag.Title</h1></div>
+            @RenderBody()
         </div>
-        
     </div>
 
     @Scripts.Render("~/bundles/jquery")

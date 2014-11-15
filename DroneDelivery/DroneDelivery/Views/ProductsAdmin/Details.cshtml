@@ -1,0 +1,64 @@
+﻿@model DroneDelivery.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductImageURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductImageURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </dt>
+
+        <dd>
+            @Model.ProductPrice.ToString("C2")
+        </dd>
+
+        <dt>
+            Current Inventory Count: @ViewData["current_stock"]
+        </dt>
+
+        <dd>
+            @Html.ActionLink("Change Product Stock", "ChangeStock", new { id = Model.Id })
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

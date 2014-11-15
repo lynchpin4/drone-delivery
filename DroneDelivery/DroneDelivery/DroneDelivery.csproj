@@ -171,9 +171,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
+    <Compile Include="Controllers\Admin\InventoryTransactionsController.cs" />
+    <Compile Include="Controllers\Admin\ProductsAdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers_Api\DronesController.cs" />
     <Compile Include="Controllers_Api\InventoryController.cs" />
     <Compile Include="Database\DatabaseContext.cs" />
     <Compile Include="Database\DatabaseInitializer.cs" />
@@ -182,6 +185,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DroneDeliveryContext.cs" />
     <Compile Include="Models\DroneModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\InventoryModels.cs" />
@@ -202,8 +206,10 @@
     <Content Include="Assets\rechargeable-aa.jpg" />
     <Content Include="Assets\sharpie.jpg" />
     <Content Include="Assets\skittles.jpg" />
+    <Content Include="Assets\small-spinner.gif" />
     <Content Include="Assets\socks.jpg" />
     <Content Include="Assets\wrigleys.jpg" />
+    <Content Include="challenge.txt" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -215,6 +221,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\DroneDelivery.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\handlebars-v2.0.0.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -222,6 +229,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\google-maps.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\products.js" />
     <Content Include="Scripts\respond.js" />
@@ -270,6 +278,19 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Admin\_ViewStart.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\ProductsAdmin\Create.cshtml" />
+    <Content Include="Views\ProductsAdmin\Delete.cshtml" />
+    <Content Include="Views\ProductsAdmin\Details.cshtml" />
+    <Content Include="Views\ProductsAdmin\Edit.cshtml" />
+    <Content Include="Views\ProductsAdmin\Index.cshtml" />
+    <Content Include="Views\ProductsAdmin\_ViewStart.cshtml" />
+    <Content Include="Views\ProductsAdmin\ChangeStock.cshtml" />
+    <Content Include="Views\InventoryTransactions\Create.cshtml" />
+    <Content Include="Views\InventoryTransactions\Delete.cshtml" />
+    <Content Include="Views\InventoryTransactions\Details.cshtml" />
+    <Content Include="Views\InventoryTransactions\Index.cshtml" />
+    <Content Include="Views\InventoryTransactions\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_CommonHead.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -280,7 +301,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

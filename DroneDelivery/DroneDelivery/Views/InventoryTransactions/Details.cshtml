@@ -1,0 +1,56 @@
+﻿@model DroneDelivery.Models.InventoryTransaction
+
+@{
+    ViewBag.Title = "Inventory Transaction Details";
+}
+
+<div>
+    <h4>Inventory Transaction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OccurredAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OccurredAt)
+        </dd>
+
+        <dt>
+            Added or Removed:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Count)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DroneDelivery.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,6 +20,13 @@ namespace DroneDelivery.Database
 #endif
     {
         protected DatabaseContext db;
+        
+        static void WriteLine(string msg)
+        {
+#if DEBUG
+            System.Diagnostics.Debug.WriteLine(msg);
+#endif
+        }
 
         /// <summary>
         /// quick pseudo-deserialization of xml into custom object for the express purpose of seeding the DB.
@@ -85,6 +93,37 @@ namespace DroneDelivery.Database
             }
 
             db.SaveChanges();
+
+            foreach (var p in products.Descendants(XName.Get("product")))
+            {
+                string stockValue = null;
+                string productName = null;
+
+                foreach (var node in p.Descendants())
+                {
+                    string name = node.Name.ToString();
+
+                    if (name == "Stock")
+                    {
+                        stockValue = node.Value;
+                    }
+
+                    if (name == "ProductName")
+                    {
+                        productName = node.Value;
+                    }
+                }
+
+                if (stockValue != null && productName != null)
+                {
+                    var pr = db.Products.Where((x) => x.ProductName == productName).First();
+                    Inventory.AddToStock(db, pr.Id, int.Parse(stockValue));
+                    WriteLine("Seeded " + pr.ProductName + " with initial stock of " + stockValue);
+                }
+            }
+
+            db.SaveChanges();
+            WriteLine("Done seeding database -- Products");
         }
 
         protected override void Seed(DatabaseContext context)

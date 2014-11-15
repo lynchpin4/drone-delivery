@@ -42,5 +42,11 @@ namespace DroneDelivery.Controllers
                 return Redirect("/products");
             }
         }
+
+        [HttpPost]
+        public ActionResult Order()
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,15 @@
+﻿We’re excited to invite you to the systems engineering challenge--the next stage of our interview process. The challenge is described below.
+
+Design a system for implementing a same-hour quadcopter delivery service. The service should:
+
+Maintain an inventory of products in stock.
+Receive requests for availability of products for purchase. When an availability request is received, assume that it takes a non-trivial amount of time to check the inventory (i.e. it is not atomic). [I never understood if this was meant to be a manual process in the backend, it's implemented as an AJAX api repeatedly called until the result has info. (Currently just after 4-5 checks)]
+Receive requests to purchase products.
+Report back to the customer when their order has been received and delivered.
+If a customer terminates a delivery mid-order, the quadcopter should return the product to inventory.
+
+Describe the data structures that you intend to use to store the necessary information. Be sure your solution addresses potential concurrency problems. [This could be handled further by switching all ID's to Guids although SQL-Server reliably handles atomic int ID inserts so on the database side it's a non-issue]
+
+You have 48 hours to submit your solution. You may choose to spend as little or as much time as you feel is appropriate.
+
+Look forward to your submission!

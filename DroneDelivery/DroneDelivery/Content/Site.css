@@ -22,3 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* Application specific stuff */
+.dronemap .gmap {
+    width: 500px;
+    height: 500px;
+    background: #eee;
+}

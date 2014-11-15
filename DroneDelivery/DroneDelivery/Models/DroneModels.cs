@@ -65,6 +65,15 @@ namespace DroneDelivery.Models
         public DateTime LastUpdate { get; set; }
     }
 
+    public class DroneBaseStation
+    {
+        public DroneBaseStation()
+        {
+            Location = new DroneLocation(); // set default home base.
+        }
+        public DroneLocation Location { get; set; }
+    }
+
     /// <summary>
     /// A complex type representing location on the globe.
     /// </summary>

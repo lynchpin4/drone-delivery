@@ -1,9 +1,25 @@
 ﻿@{
-    var product = ViewBag.product; 
+    var product = ViewBag.product;
+    ViewBag.Title = product.ProductName;
+}
+
+@section AdditionalHead
+{
+    <script id="availability-template" type="text/x-handlebars-template">
+        {{#if Error}}
+            <p class="text-danger">{{Message}}</p>
+        {{else}}
+            <p class="text-info">In Stock: {{#if InStock}}Yes{{else}}No{{/if}}</p>
+            <p class="text-info">Current Stock Count: {{#if InStock}}{{StockCount}}{{else}}All out.{{/if}}</p>
+        {{/if}}
+    </script>
 }
 
 @section AdditionalScripts
 {
+    <script>
+        window.__productId = @product.Id;
+    </script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/products.js")"></script> 
 }
 
@@ -16,7 +32,15 @@
         <h3>@product.ProductName - @product.ProductPrice.ToString("C2")</h3>
         <h5>@product.ProductDescription</h5>
 
-        <a class="btn btn-primary" id="order_product">Place an Order</a>
-        <a class="btn btn-default" id="check_availablity">Check Availability</a>
+        @if (Request.IsAuthenticated) {
+            <a class="btn btn-primary" id="order_product">Place an Order</a>
+        }
+        
+        <a class="btn btn-default btn-check-avail" href="#" id="check_availablity">Check Availability</a>
+        <span id="availability_spinner" class="availability-spinner" style="display: none;">
+            <img src="~/Assets/small-spinner.gif" />
+        </span>
+
+        <div id="availability_info" class="availability-info" style="display: none;"></div>
     </div>
 </div>

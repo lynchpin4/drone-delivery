@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace DroneDelivery.Controllers_Api
 {
-    public class InventoryRequestResult : InventoryRequest
+    public class InventoryRequestResult
     {
         public InventoryRequestResult() : base()
         {
@@ -17,6 +17,9 @@ namespace DroneDelivery.Controllers_Api
             Error = false;
         }
 
+        public InventoryRequest Request { get; set; }
+
+        public bool HasResult { get { return Request.HasResult; } set { Request.HasResult = value; } }
         public string Message { get; set; }
         public bool Error { get; set; }
     }
@@ -33,10 +36,12 @@ namespace DroneDelivery.Controllers_Api
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [HttpGet]
         [Route("check/{id:int}")]
         public InventoryRequestResult Check(int id)
         {
             var request = db.InventoryRequests.Create();
+            request.Id = Guid.NewGuid();
             request.CreatedAt = DateTime.Now;
             request.ProductId = id;
             request.CheckCount = 1;
@@ -45,9 +50,10 @@ namespace DroneDelivery.Controllers_Api
             db.InventoryRequests.Add(request);
             db.SaveChanges();
 
-            return request as InventoryRequestResult;
+            return new InventoryRequestResult() { Request = request, Error = false, Message = "" };
         }
 
+        [HttpGet]
         [Route("check/{id:guid}")]
         public InventoryRequestResult Check(Guid id)
         {
@@ -56,13 +62,13 @@ namespace DroneDelivery.Controllers_Api
             {
                 request.CheckCount++;
 
-                InventoryRequestResult resp = request as InventoryRequestResult;
+                InventoryRequestResult resp = new InventoryRequestResult() { Request = request };
                 if (request.CheckCount >= 5)
                 {
-                    resp.StockCount = Inventory.GetTotalInStock(db, resp.ProductId);
-                    resp.InStock = false;
-                    if (resp.StockCount > 0)
-                        resp.InStock = true;
+                    resp.Request.StockCount = Inventory.GetTotalInStock(db, resp.Request.ProductId);
+                    resp.Request.InStock = false;
+                    if (resp.Request.StockCount > 0)
+                        resp.Request.InStock = true;
 
                     resp.Message = "OK";
                     resp.Error = false;

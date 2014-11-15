@@ -9,6 +9,7 @@
     <ProductDescription>4 packs of Skittles candy.</ProductDescription>
     <ProductPrice>15.00</ProductPrice>
     <ProductWeight>1.2</ProductWeight>
+    <Stock>5</Stock>
   </product>
   
   <product>
@@ -18,6 +19,7 @@
     <ProductDescription>5pk wrigleys chewing gum</ProductDescription>
     <ProductPrice>17.00</ProductPrice>
     <ProductWeight>1.4</ProductWeight>
+    <Stock>5</Stock>
   </product>
 
   <product>
@@ -27,6 +29,7 @@
     <ProductDescription>5pk extra chewing gum</ProductDescription>
     <ProductPrice>17.00</ProductPrice>
     <ProductWeight>1.4</ProductWeight>
+    <Stock>5</Stock>
   </product>
   
   <product>
@@ -36,6 +39,7 @@
     <ProductDescription>Pack of AAA Batteries.</ProductDescription>
     <ProductPrice>10.00</ProductPrice>
     <ProductWeight>1.5</ProductWeight>
+    <Stock>5</Stock>
   </product>
   
   <product>
@@ -54,6 +58,7 @@
     <ProductDescription>Nikon Coolpix camera</ProductDescription>
     <ProductPrice>100.00</ProductPrice>
     <ProductWeight>1.5</ProductWeight>
+    <Stock>1</Stock>
   </product>
   
   <product>
@@ -63,6 +68,7 @@
     <ProductDescription>Digital Camera</ProductDescription>
     <ProductPrice>200.00</ProductPrice>
     <ProductWeight>2.5</ProductWeight>
+    <Stock>1</Stock>
   </product>
   
   <product>
@@ -72,6 +78,7 @@
     <ProductDescription>Fresh pack of socks</ProductDescription>
     <ProductPrice>20.00</ProductPrice>
     <ProductWeight>2.5</ProductWeight>
+    <Stock>50</Stock>
   </product>
 
   <product>
