@@ -1,0 +1,5 @@
+C:\Users\Admin\Desktop\DroneProject\Drone\bin\Release\Drone.exe.config
+C:\Users\Admin\Desktop\DroneProject\Drone\bin\Release\Drone.exe
+C:\Users\Admin\Desktop\DroneProject\Drone\bin\Release\Drone.pdb
+C:\Users\Admin\Desktop\DroneProject\Drone\obj\Release\Drone.exe
+C:\Users\Admin\Desktop\DroneProject\Drone\obj\Release\Drone.pdb
