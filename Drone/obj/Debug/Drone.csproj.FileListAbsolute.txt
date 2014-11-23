@@ -4,3 +4,8 @@ C:\Users\Admin\Desktop\DroneProject\Drone\bin\Debug\Drone.pdb
 C:\Users\Admin\Desktop\DroneProject\Drone\obj\Debug\Drone.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\DroneProject\Drone\obj\Debug\Drone.exe
 C:\Users\Admin\Desktop\DroneProject\Drone\obj\Debug\Drone.pdb
+C:\Users\internet\Documents\dronedeliv\Drone\bin\Debug\Drone.exe.config
+C:\Users\internet\Documents\dronedeliv\Drone\bin\Debug\Drone.exe
+C:\Users\internet\Documents\dronedeliv\Drone\bin\Debug\Drone.pdb
+C:\Users\internet\Documents\dronedeliv\Drone\obj\Debug\Drone.exe
+C:\Users\internet\Documents\dronedeliv\Drone\obj\Debug\Drone.pdb

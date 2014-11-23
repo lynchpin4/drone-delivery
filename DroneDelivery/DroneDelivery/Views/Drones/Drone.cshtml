@@ -1,0 +1,39 @@
+﻿@model DroneDelivery.Models.Drone
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Current Location</h2>
+        <div id="drone_location" style="width: 100%; height: 500px;" class="dronemap"></div>
+    </div>
+    <div class="col-md-6">
+        <h2>Drone Info</h2>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label>Drone Name</label>
+                <div class="col-md-2">@Model.PetName</div>
+            </div>
+            <div class="form-group">
+                <label>Drone Status</label>
+                <div class="col-md-2">@Model.Status.ToString()</div>
+            </div>
+            <div class="form-group">
+                <label>Last Update Time: </label>
+                <div class="col-md-2">@Model.LastUpdate.ToString()</div>
+            </div>
+            <div class="form-group">
+                <label>Current Order</label>
+                <div class="col-md-2">
+                    @if (Model.CurrentOrder && Model.CurrentOrder.Id != Guid.Empty)
+                    {
+                        // todo link details
+                        <span class="text-info">Order Id: @Model.CurrentOrder.Id.ToString()</span>
+                    }
+                    else
+                    {
+                        <span class="text-info">No current order.</span>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

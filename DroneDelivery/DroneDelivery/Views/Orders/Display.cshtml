@@ -1,0 +1,18 @@
+﻿@model DroneDelivery.Models.Order
+@{
+    ViewBag.Title = "Viewing Order";
+}
+
+<h1 class="page-header">Order for @Model.Product.ProductName</h1>
+<div class="row">
+    <div class="col-md-5">
+        <h3>@Model.Product.ProductName - @Model.Product.ProductPrice.ToString("C2")</h3>
+        <h5>@Model.Product.ProductDescription</h5>
+
+        <p style="margin: 20px;" class="text-info">Your order is: @Model.OrderStatus.ToString()</p>
+        
+        @if (Model.OrderStatus != DroneDelivery.Models.OrderStatus.DELIVERED) { 
+            <a class="btn btn-danger button-cancel" href="#" id="cancel_order">Cancel Order</a>
+        }
+    </div>
+</div>

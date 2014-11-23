@@ -93,6 +93,7 @@ namespace DroneDelivery.Controllers.Admin
         {
             var id = int.Parse(Request["id"]);
 
+            // int.tryparse todo.
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

@@ -28,6 +28,15 @@ namespace DroneDelivery.Models
     /// </summary>
     public class Drone
     {
+        public Drone()
+        {
+            Location = DroneBaseStation.BaseLocation;
+            PetName = "Artificial Drone";
+            Battery = 100.0;
+            Status = DroneStatus.HOME;
+            Id = Guid.NewGuid();
+        }
+
         /// <summary>
         /// Drone unique identifier
         /// </summary>
@@ -55,7 +64,7 @@ namespace DroneDelivery.Models
         public virtual Order CurrentOrder { get; set; }
         
         /// <summary>
-        /// The current location of the drone. This property is automatically serialized to/from JSON.
+        /// The current location of the drone. This property is a complex type.
         /// </summary>
         public DroneLocation Location { get; set; }
 
@@ -65,11 +74,21 @@ namespace DroneDelivery.Models
         public DateTime LastUpdate { get; set; }
     }
 
+    /// <summary>
+    /// The default home base for the drone, the geocoded address of the Seattle Amazon HQ.
+    /// </summary>
     public class DroneBaseStation
     {
+        public static DroneLocation BaseLocation = new DroneLocation()
+        {
+            Latitude = 47.622279,
+            Longitude = -122.336829
+        };
+
         public DroneBaseStation()
         {
-            Location = new DroneLocation(); // set default home base.
+            // Home base (Amazon HQ - 410 Terry Ave N Seattle WA)
+            Location = BaseLocation;
         }
         public DroneLocation Location { get; set; }
     }
@@ -83,6 +102,11 @@ namespace DroneDelivery.Models
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public double Altitude { get; set; }
+
+        public string ToString()
+        {
+            return Latitude + "," + Longitude;
+        }
     }
 
 }

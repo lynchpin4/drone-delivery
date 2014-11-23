@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -6,6 +7,9 @@ using System.Web;
 
 namespace DroneDelivery.Models
 {
+    /// <summary>
+    /// Unused DB Context - EF scaffolding doesn't work for the DatabaseContext.
+    /// </summary>
     public class DroneDeliveryContext : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
@@ -21,9 +25,26 @@ namespace DroneDelivery.Models
         {
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Order>().HasOptional<Drone>((x) => x.Drone).WithOptionalPrincipal();
+
+            modelBuilder.Entity<IdentityUserLogin>().HasKey<string>(l => l.UserId);
+            modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id);
+            modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
+        }
+
         public System.Data.Entity.DbSet<DroneDelivery.Models.Product> Products { get; set; }
 
         public System.Data.Entity.DbSet<DroneDelivery.Models.InventoryTransaction> InventoryTransactions { get; set; }
+
+        public System.Data.Entity.DbSet<DroneDelivery.Models.Order> Orders { get; set; }
+
+        public System.Data.Entity.DbSet<DroneDelivery.Models.OrderLocation> OrderLocations { get; set; }
+
+        public System.Data.Entity.DbSet<DroneDelivery.Models.ApplicationUser> ApplicationUsers { get; set; }
     
     }
 }

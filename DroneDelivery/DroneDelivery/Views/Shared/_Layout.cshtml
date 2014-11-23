@@ -7,8 +7,6 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    @Html.Partial("_CommonHead")
-
     @if (IsSectionDefined("AdditionalHead"))
     {
         @RenderSection("AdditionalHead", required: false);
@@ -43,6 +41,8 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    @Html.Partial("_CommonMaps")
 
     @if (IsSectionDefined("AdditionalScripts"))
     {

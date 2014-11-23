@@ -33,7 +33,7 @@
         <h5>@product.ProductDescription</h5>
 
         @if (Request.IsAuthenticated) {
-            <a class="btn btn-primary" id="order_product">Place an Order</a>
+            <a href="/orders/create?id=@product.Id" class="btn btn-primary" id="order_product">Order This Item</a>
         }
         
         <a class="btn btn-default btn-check-avail" href="#" id="check_availablity">Check Availability</a>

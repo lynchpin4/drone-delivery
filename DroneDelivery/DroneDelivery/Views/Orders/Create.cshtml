@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Create Order";
+    var Product = ViewData["product"] as DroneDelivery.Models.Product;
+}
+
+@using (Html.BeginForm("CreateOrder", "Orders", FormMethod.Post)) { 
+<h1 class="page-header">Ordering @Product.ProductName</h1>
+<div class="row">
+    <div class="col-md-5">
+        <h3>@Product.ProductName - @Product.ProductPrice.ToString("C2") (No actual payment)</h3>
+        <h5>@Product.ProductDescription</h5>
+
+        @Html.Hidden("ProductId", Product.Id);
+
+        <!-- time, and hey i'm not getting paid for this.. constraints started applying here. yes, yes i know - a partial view with a model representing each map, that had it's own lil js controller would have been sweeter. time is money baby all i gotta say. -->
+        <div class="form-horizontal">
+            
+            <p>Enter your address in the box below on the map, then adjust the marker to where you would like the drone to land.</p>
+            <p>The delivery range is based around the Seattle area, with 'drones' dispatched from the Amazon headquarters at 410 Terry Ave.</p>
+           
+            <a href="#" onclick="drone_map.geolocate();">Find me (Geolocation Attempt)</a>
+            <div id="landing_location" style="width: 500px; height: 500px;" class="dronemap" search="true" defaultloc="true"></div>
+
+            <h4>The address below should generally be correct &amp; match closely or nearby the location where the item is to be delivered by a servant of our new robot overlords..</h4>
+
+            <table id="address">
+                <tr>
+                    <td class="label">Street address</td>
+                    <td class="slimField">
+                        <input name="Address" class="field" id="street_number" disabled="true"></input>
+                    </td>
+                    <td class="wideField" colspan="2">
+                        <input class="field" id="route" disabled="true"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">City</td>
+                    <td class="wideField" colspan="3">
+                        <input name="City" class="field" id="locality" disabled="true"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">State</td>
+                    <td class="slimField">
+                        <input name="State" class="field"
+                               id="administrative_area_level_1" disabled="true"></input>
+                    </td>
+                    <td class="label">Zip code</td>
+                    <td class="wideField">
+                        <input name="ZipCode" class="field" id="postal_code" disabled="true"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Country</td>
+                    <td class="wideField" colspan="3">
+                        <input name="Country" class="field" id="country" disabled="true"></input>
+                    </td>
+                </tr>
+            </table>
+
+            <input type="hidden" name="latitude" id="latitude" class="latitude" />
+            <input type="hidden" name="longitude" id="longitude" class="longitude" />
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Submit Order" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}

@@ -3,11 +3,17 @@
 }
 
 <div class="jumbotron">
-    <h1>Drone Delivery</h1>
+    <h1>Example Drone Delivery Service</h1>
     <p class="lead">An example inventory control, store &amp; and drone delivery management system, built on ASP.NET MVC 5 &amp; C#</p>
-    <p><a href="/backend" class="btn btn-primary btn-lg">Go to the Management Panel</a></p>
-</div>
+    <p><a href="/Products" class="btn btn-primary btn-lg">Show Products</a></p>
 
-<div class="row">
-    
+    @if (Request.IsAuthenticated)
+    {
+        var isAdmin = Context.User.IsInRole("Admin");
+        if (isAdmin) { <p><a href="/admin/" class="btn btn-default btn-lg">Go to the Management Panel</a></p> }
+    }
+    else
+    {
+        <p><a href="/Account/Register" class="btn btn-default btn-lg">Create Account</a></p>
+    }
 </div>

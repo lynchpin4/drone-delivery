@@ -25,7 +25,13 @@ textarea {
 
 /* Application specific stuff */
 .dronemap .gmap {
-    width: 500px;
-    height: 500px;
+    min-width: 350px;
+    min-height: 350px;
     background: #eee;
+}
+
+.pac-input
+{
+    width: 80%!important;
+    max-width: none;
 }

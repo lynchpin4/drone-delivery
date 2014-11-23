@@ -1,0 +1,30 @@
+﻿@model IEnumerable<DroneDelivery.Models.Drone>
+@{
+    ViewBag.Title = "Drone List";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table-striped">
+            <thead>
+                <th style="max-width: 100px;">ID</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Last Checkin</th>
+                <th></th>
+            </thead>
+            <tbody>
+                @foreach (var drone in Model)
+                {
+                    <tr id="@drone.Id" class="drone-row">
+                        <td>@drone.Id</td>
+                        <td>@drone.PetName</td>
+                        <td>@drone.Location.ToString()</td>
+                        <td>@drone.LastUpdate.ToShortTimeString()</td>
+                        <td>@Html.ActionLink("Controls", "Details", new { id = drone.Id }) | @Html.ActionLink("Details", "Details", new { id = drone.Id }) | @Html.ActionLink("Delete", "Delete", new { id = drone.Id })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

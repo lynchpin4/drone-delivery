@@ -9,6 +9,7 @@ using System.Web;
 
 namespace DroneDelivery.Database
 {
+    [DbConfigurationType(typeof(DatabaseConfiguration))] 
     public class DatabaseContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Product> Products { get; set; }
@@ -16,15 +17,18 @@ namespace DroneDelivery.Database
         public DbSet<InventoryRequest> InventoryRequests { get; set; }
         public DbSet<Drone> Drones { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderLocation> Locations { get; set; }
+        public DbSet<OrderLocation> OrderLocations { get; set; }
 
         static DatabaseContext()
         {
             System.Data.Entity.Database.SetInitializer<DatabaseContext>(new DatabaseInitializer());
         }
 
+        //.. finally.
+        public const string AZURE_DB = "Server=tcp:f9w1mr9fv7.database.windows.net,1433;Database=DroneDelivery;User ID=DroneDelivery@f9w1mr9fv7;Password=ic3d-windows-db2014;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+
         public DatabaseContext()
-            : base("DatabaseContext")
+            : base(AZURE_DB)
         {
             Database.Initialize(false);
         }
@@ -38,7 +42,6 @@ namespace DroneDelivery.Database
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-
             modelBuilder.Entity<Order>().HasOptional<Drone>(p => p.Drone).WithOptionalPrincipal();
 
             base.OnModelCreating(modelBuilder);

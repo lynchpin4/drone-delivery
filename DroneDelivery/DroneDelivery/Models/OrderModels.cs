@@ -9,7 +9,7 @@ namespace DroneDelivery.Models
 {
     public enum OrderStatus
     {
-        // initial status
+        // initial status, product may not be in stock
         CREATED = 1,
 
         // the order is pending delivery
@@ -22,7 +22,10 @@ namespace DroneDelivery.Models
         TRANSIT = 4,
 
         // canceled (return drone to base, return product to inventory)
-        CANCELED = 5
+        CANCELED = 5,
+
+        // awaiting a return to stock (availabilty check on order omitted due to time)
+        AWAITING_STOCK = 6
     }
 
     /// <summary>
@@ -31,9 +34,11 @@ namespace DroneDelivery.Models
     public class Order
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string UserId { get; set; }
+
+        public DateTime OrderedAt { get; set; }
 
         /// <summary>
         /// Who the order is for
@@ -81,7 +86,7 @@ namespace DroneDelivery.Models
         }
 
         public string Address { get; set; }
-        public string Zip { get; set; }
+        public string ZipCode { get; set; }
         public string City { get; set; }
         public string State { get; set; }
 
@@ -92,24 +97,5 @@ namespace DroneDelivery.Models
         /// </summary>
         public DroneLocation Destination { get; set; }
         public bool HasDestination { get; set; }
-
-        /*
-        /// <summary>
-        /// Automatically serialize / deserialize the drone destination location (Since complex types can never be null)
-        /// </summary>
-        public string DroneDestination
-        {
-            get
-            {
-                if (!Destination.HasValue) return "";
-                return JsonConvert.SerializeObject(Destination);
-            }
-            set
-            {
-                if (string.IsNullOrWhiteSpace(value)) return;
-                Destination = JsonConvert.DeserializeObject<DroneLocation>(value);
-            }
-        }
-         */
     }
 }

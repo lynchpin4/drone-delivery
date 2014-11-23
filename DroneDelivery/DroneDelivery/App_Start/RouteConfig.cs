@@ -30,6 +30,12 @@ namespace DroneDelivery
                 defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional }
             );
 
+            routes.MapRoute(
+                name: "Orders",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Orders", action = "Index" }
+            );
+
             /*
             // Admin web page controllers
             routes.MapRoute(
